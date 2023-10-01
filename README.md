@@ -7,7 +7,7 @@ this is a weather application for your standerd week.
   - [Description](#description)
   - [Known bugs](#Bugs)
   - [Features](#features)
-  - [Link] (#link to deployed website)
+  - [Link](#link-to-deployed-website)
   - [Photo](#photo)
 
  
