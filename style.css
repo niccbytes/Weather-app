@@ -115,3 +115,13 @@ font-size: 14px;
 margin-top: 10px;
 display: none;
 }
+
+.forecast-container {
+  display: flex;
+  justify-content: space-between; }
+
+.forecast-day {
+  flex: 1;
+  text-align: center;
+
+}
