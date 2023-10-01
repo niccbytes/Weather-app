@@ -106,6 +106,7 @@ margin-top: -6px;
 
 .Weather{
 display: none;
+display: flex;
 }
 
 .error {
@@ -124,4 +125,29 @@ display: none;
   flex: 1;
   text-align: center;
 
+}
+
+#historyContainer {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 300px;
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  margin-left: 55px;  
+}
+
+#historyContainer div {
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  display: flex;
+  justify-content: center;
+}
+
+#historyContainer div:hover {
+  background-color: #ffffff;
 }

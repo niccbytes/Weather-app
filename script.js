@@ -5,6 +5,43 @@ const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".Weather-icon");
 const forecastContainer = document.getElementById("forecastContainer");
+const historyContainer = document.getElementById("historyContainer");
+
+// Function to update the city history
+function updateCityHistory(city) {
+  let cityHistory = JSON.parse(localStorage.getItem("cityHistory")) || [];
+  cityHistory.push(city);
+  localStorage.setItem("cityHistory", JSON.stringify(cityHistory));
+
+  // Call a function to update the display of city history, e.g., renderCityHistory();
+}
+
+// Function to render the city history
+function renderCityHistory() {
+  const cityHistory = JSON.parse(localStorage.getItem("cityHistory")) || [];
+  historyContainer.innerHTML = "";
+
+  cityHistory.forEach((city) => {
+    const historyItem = document.createElement("div");
+    historyItem.textContent = city;
+    historyContainer.appendChild(historyItem);
+  });
+}
+
+// Initial rendering of city history on page load
+renderCityHistory();
+
+// Add an event listener for the search button
+searchBtn.addEventListener("click", async () => {
+  const city = searchBox.value.trim();
+  if (city) {
+    await checkWeather(city);
+    updateCityHistory(city);
+    renderCityHistory(); // Update the displayed city history
+  }
+});
+
+
 
 async function checkWeather(city) {
   try {
@@ -92,4 +129,7 @@ function updateWeatherUI(data) {
 
 searchBtn.addEventListener("click", () => {
   checkWeather(searchBox.value);
+
+
+
 });
